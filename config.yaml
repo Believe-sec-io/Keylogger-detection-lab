@@ -1,0 +1,42 @@
+# Configuration Keylogger Detector
+threshold:
+  risk_score: 70  # Seuil d'alerte (0-100)
+
+scan_interval: 30  # Intervalle entre les scans (secondes)
+
+# Fichiers de logging
+alert_log_file: alerts.log
+alert_json_file: alerts.json
+save_alerts_json: false
+
+# Processus à exclure (système)
+excluded_processes:
+  - System
+  - svchost.exe
+  - csrss.exe
+  - winlogon.exe
+  - services.exe
+  - lsass.exe
+
+# DLL suspectes connues
+suspicious_dlls:
+  - easyhook
+  - hooklib
+  - pynput
+  - globalmousekeyboard
+  - keylogger
+  - keyhook
+
+# Surveillance réseau
+network:
+  suspicious_ports:
+    - 4444
+    - 6666
+    - 8080
+    - 1337
+    - 31337
+  suspicious_domains:
+    - pastebin.com
+    - dropbox.com
+    - discord.com
+    - transfer.sh
